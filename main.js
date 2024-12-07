@@ -15,7 +15,7 @@ if(!height.value||!weight.value){
    
    if(bmi<18.5){
 
-    level.style.height = 3+"%"
+    level.style.height = 3+bmi+"%"
     level.style.backgroundColor = "#EB3678"
     result.style.color=level.style.backgroundColor
     level.style.transition ="0.5s"
@@ -25,7 +25,7 @@ if(!height.value||!weight.value){
 
    if(bmi>=18.5&&bmi<=24.9){
 
-    level.style.height = 35+"%"
+    level.style.height = 35+bmi-18.5+"%"
     level.style.backgroundColor = "#9ABF80"
     level.style.transition ="0.5s"
     kword="Healthy"
@@ -35,7 +35,7 @@ if(!height.value||!weight.value){
  
    if(bmi>=25&&bmi<=39.9){
 
-    level.style.height = 65+"%"
+    level.style.height = 65+bmi-25+"%"
     level.style.backgroundColor = "#F3C623"
     level.style.transition ="0.5s"
     result.style.color=level.style.backgroundColor
@@ -50,7 +50,7 @@ if(!height.value||!weight.value){
     kword="Obese"
    }
    result.innerHTML=`<h3>BMI score:${Math.round(bmi * 10) / 10}</h3>
-   <h3>${kword}</h3>`
+   <h3 style="margin-top:10px;">You are ${kword}</h3>`
     }
    
 }
